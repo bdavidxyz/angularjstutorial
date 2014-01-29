@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="hbApp">
 <head>
-    <title>The Heinebier Application</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor/bootstrap3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+	<title>The Heinebier Application</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="vendor/bootstrap3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-<div class="container" id="HB_main-container">
-    <div class="row">
-        <div class="col-md-12">
-			<div ng-include="'js/header/header.html'"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-6">
-        </div>
-    </div>
-</div>
+	<div class="container" id="HB_main-container">
+		<div class="row">
+			<div class="col-md-12">
+				<div ng-include="'js/header/header.html'"></div>
+			</div>
+		</div>
+		<div ng-view/>
+	</div>
 
-<script src="vendor/jquery2/jquery2.min.js"></script>
-<script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
-<script src="vendor/angularjs/angular.min.js"></script>
+
+	<!-- Librairies -->
+	<script src="vendor/jquery2/jquery2.min.js"></script>
+	<script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
+	<script src="vendor/angularjs/angular.min.js"></script>
+	<script src="vendor/angularjs/angular-route.min.js"></script>
+
+	<!-- Our own code -->
+	<script src="js/app.js"></script>
 </body>
 </html>
