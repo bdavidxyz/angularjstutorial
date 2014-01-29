@@ -1,6 +1,7 @@
 var express = require('express'),
    http = require('http'),
    path = require('path'),
+   authRoute = require('./routes/authRoute')
    tagRoute = require('./routes/tagRoute');
 
 var app = express();
@@ -25,7 +26,7 @@ app.configure('development', function(){
 /*   AUTH REST REQUESTS   */
 
 app.get('/heinebier/tags', tagRoute.listTags);
-
+app.get('/heinebier/auth', authRoute.getAuth);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
