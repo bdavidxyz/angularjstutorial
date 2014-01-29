@@ -2,6 +2,7 @@
 /* global it */
 /* global expect */
 /* global repeater */
+/* global element */
 /* global describe */
 /* jslint node: true */
 "use strict";
@@ -17,7 +18,7 @@ describe('Default display', function() {
 		expect(repeater('#HB_footer').count()).toEqual(1);
 	});
 	it('Should display user name', function() {
-		expect(repeater('#HB_user-name').text()).toEqual("stubbed@user.com");
+		expect(element('#HB_user-name').text()).toEqual("stubbed@user.com");
 	});
 
 });
