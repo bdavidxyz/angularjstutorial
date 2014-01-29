@@ -6,6 +6,9 @@ hbApp.config(function ($routeProvider) {
         .when('/', {
             templateUrl: 'js/welcome/welcome.html'
         })
+        .when('/tags', {
+            templateUrl: 'js/tags/tags.html'
+        })
         .otherwise({
             redirectTo: '/error'
         });
