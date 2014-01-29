@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
-    <title>Active English Courses</title>
+    <title>The Heinebier Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor/bootstrap3/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
 <div class="container" id="HB_main-container">
     <div class="row">
         <div class="col-md-12">
+			<div ng-include="'js/header/header.html'"></div>
         </div>
     </div>
     <div class="row">
@@ -22,5 +24,6 @@
 
 <script src="vendor/jquery2/jquery2.min.js"></script>
 <script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
+<script src="vendor/angularjs/angular.min.js"></script>
 </body>
 </html>
