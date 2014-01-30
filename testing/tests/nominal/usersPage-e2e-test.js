@@ -39,9 +39,8 @@ describe('Users page', function() {
 	});
 	it('Should POST a new user and append it to the list when request accepted', function() {
 		element('form#HB_new-user-form > button').click();
-		expect(lastRequest("POST").body()).toEqual({
-            "email": "a.valid@email.com"
-        });
+		expect(lastRequest("POST").body()).toEqual({"email": "a.valid@email.com"});
+        expect(lastRequest("POST").url()).toEqual("/heinebier/user");
 	});
 
 });
