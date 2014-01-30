@@ -1,26 +1,32 @@
 <div class="row" id="HB_users-page">
 	<div class="col-md-12">
 		<div class="row-fluid">
-			<div class="">
-				<table class="table">
-					<thead>
-						<tr>
-							<th id="HB_user-table-header">
-								users
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="user in users">
-							<td id="RM_user-email-{{$index+1}}">
-								<span class="hb-user">
-									{{user.email}}
-								</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<div>
+				<form class="input-append" name="form" id="HB_new-user-form">
+					<input id="HB_new-user-form-input"/>
+					<button id="HB_new-user-form-button">+</button>
+			</form>
+		</div>
+		<div class="">
+			<table class="table">
+				<thead>
+					<tr>
+						<th id="HB_user-table-header">
+							users
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in users">
+						<td id="RM_user-email-{{$index+1}}">
+							<span class="hb-user">
+								{{user.email}}
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
+</div>
 </div>

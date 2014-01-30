@@ -17,7 +17,19 @@ describe('Users page', function() {
 	it('Should display all users', function() {
 		expect(repeater('.hb-user').count()).toEqual(5);
 	});
-	// it('Should be able to add a new user', function() {
-	// 	expect(repeater('input').count()).toEqual(1);
-	// });
+	it('Should be able to add a new user', function() {
+		//an input so that a new user can be entered
+		expect(repeater('form#HB_new-user-form > input').count()).toEqual(1);
+		//a button to submit the form
+		expect(repeater('form#HB_new-user-form > button').count()).toEqual(1);
+	});
+	it('Should have disabled input by default', function() {
+		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(1);
+	});
+	it('Should have disabled "add-user button" if not an email', function() {
+		expect('not implemented');
+	});
+	it('Should have enabled  "add-user" email entered', function() {
+		expect('not implemented');
+	});
 });
