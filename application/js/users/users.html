@@ -3,8 +3,13 @@
 		<div class="row-fluid">
 			<div>
 				<form class="input-append" name="form" id="HB_new-user-form">
-					<input id="HB_new-user-form-input"/>
-					<button id="HB_new-user-form-button">+</button>
+					<input 
+						id="HB_new-user-form-input"
+						ng-model="newUser.email"
+						type="email"
+						required/>
+					<button id="HB_new-user-form-button"
+						ng-disabled="form.$invalid">+</button>
 			</form>
 		</div>
 		<div class="">

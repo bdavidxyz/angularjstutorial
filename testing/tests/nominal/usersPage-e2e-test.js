@@ -4,6 +4,7 @@
 /* global repeater */
 /* global element */
 /* global describe */
+/* global input */
 /* jslint node: true */
 "use strict";
 
@@ -23,13 +24,16 @@ describe('Users page', function() {
 		//a button to submit the form
 		expect(repeater('form#HB_new-user-form > button').count()).toEqual(1);
 	});
-	it('Should have disabled input by default', function() {
+	it('Should have disabled "add-user button" by default', function() {
 		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(1);
 	});
 	it('Should have disabled "add-user button" if not an email', function() {
-		expect('not implemented');
+		input('newUser.email').enter("notAValidEmail");
+		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(1);
 	});
 	it('Should have enabled  "add-user" email entered', function() {
-		expect('not implemented');
+		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(1);
+		input('newUser.email').enter("a.valid@email.com");
+		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(0);
 	});
 });
