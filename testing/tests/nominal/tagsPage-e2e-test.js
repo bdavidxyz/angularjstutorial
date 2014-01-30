@@ -14,4 +14,7 @@ describe('Tags page', function() {
 		expect(repeater('#HB_tag-menu.active').count()).toEqual(1);
 		expect(repeater('#HB_tags-page').count()).toEqual(1);
 	});
+	it('Should display all tags', function() {
+		expect(repeater('.hb-tag').count()).toEqual(5);
+	});
 });

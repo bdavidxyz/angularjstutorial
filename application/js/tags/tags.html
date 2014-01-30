@@ -1,11 +1,28 @@
 <div class="row" id="HB_tags-page">
 	<div class="col-md-12">
 
-		<div class="jumbotron">
-			<div class="container">
-				<h1>tags</h1>
-			</div>
-		</div>
+ <div class="row-fluid">
+        <div class="jumbotron">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th id="HB_tag-table-header">
+                        Tags
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="tag in tags">
+                    <td id="RM_tag-name-{{$index+1}}">
+                        <span class="hb-tag">
+                            {{tag.value}}
+                        </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 	</div>
 </div>

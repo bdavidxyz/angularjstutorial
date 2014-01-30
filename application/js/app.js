@@ -7,7 +7,13 @@ hbApp.config(function ($routeProvider) {
             templateUrl: 'js/welcome/welcome.html'
         })
         .when('/tags', {
-            templateUrl: 'js/tags/tags.html'
+            templateUrl: 'js/tags/tags.html',
+            controller:'TagsCtrl',
+            resolve: {
+                loadedTags: function (TagsSrvc) {
+                    return TagsSrvc.fetchAll();
+                }
+            }
         })
         .otherwise({
             redirectTo: '/error'
