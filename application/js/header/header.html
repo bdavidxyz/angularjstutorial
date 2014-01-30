@@ -4,9 +4,15 @@
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Users</a></li>
-      <li id="HB_tag-menu" ng-class="getClass('/tags')"><a href="#/tags" >Tags</a></li>
+      <li>
+        <a href="#">Projects</a>
+      </li>
+      <li  id="HB_users-menu" ng-class="getClass('/users')">
+        <a href="#/users">Users</a>
+      </li>
+      <li id="HB_tags-menu" ng-class="getClass('/tags')">
+        <a href="#/tags" >Tags</a>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl" ng-init="loadCurrentUser()">
       <li ><a id="HB_user-name" href="#">{{currentUser}}</a></li>

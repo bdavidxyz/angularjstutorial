@@ -1,20 +1,20 @@
-<div class="row" id="HB_tags-page">
+<div class="row" id="HB_users-page">
 	<div class="col-md-12">
 		<div class="row-fluid">
-			<div class="jumbotron">
+			<div class="">
 				<table class="table">
 					<thead>
 						<tr>
-							<th id="HB_tag-table-header">
-								Tags
+							<th id="HB_user-table-header">
+								users
 							</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="tag in tags">
-							<td id="RM_tag-name-{{$index+1}}">
-								<span class="hb-tag">
-									{{tag.value}}
+						<tr ng-repeat="user in users">
+							<td id="RM_user-email-{{$index+1}}">
+								<span class="hb-user">
+									{{user.email}}
 								</span>
 							</td>
 						</tr>

@@ -1,7 +1,8 @@
 var express = require('express'),
    http = require('http'),
    path = require('path'),
-   authRoute = require('./routes/authRoute')
+   authRoute = require('./routes/authRoute'),
+   userRoute = require('./routes/userRoute'),
    tagRoute = require('./routes/tagRoute');
 
 var app = express();
@@ -24,7 +25,7 @@ app.configure('development', function(){
 });
 
 /*   AUTH REST REQUESTS   */
-
+app.get('/heinebier/users', userRoute.listUsers);
 app.get('/heinebier/tags', tagRoute.listTags);
 app.get('/heinebier/auth', authRoute.getAuth);
 

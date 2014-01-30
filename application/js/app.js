@@ -15,6 +15,15 @@ hbApp.config(function ($routeProvider) {
                 }
             }
         })
+        .when('/users', {
+            templateUrl: 'js/users/users.html',
+            controller:'UsersCtrl',
+            resolve: {
+                loadedUsers: function (UsersSrvc) {
+                    return UsersSrvc.fetchAll();
+                }
+            }
+        })
         .otherwise({
             redirectTo: '/error'
         });
