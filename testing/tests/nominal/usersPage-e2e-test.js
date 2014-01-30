@@ -5,6 +5,7 @@
 /* global element */
 /* global describe */
 /* global input */
+/* global lastRequest */
 /* jslint node: true */
 "use strict";
 
@@ -31,9 +32,16 @@ describe('Users page', function() {
 		input('newUser.email').enter("notAValidEmail");
 		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(1);
 	});
-	it('Should have enabled  "add-user" email entered', function() {
+	it('Should have enabled  "add-user button" email entered', function() {
 		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(1);
 		input('newUser.email').enter("a.valid@email.com");
 		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(0);
 	});
+	it('Should POST a new user and append it to the list when request accepted', function() {
+		element('form#HB_new-user-form > button').click();
+		expect(lastRequest("POST").body()).toEqual({
+            "email": "a.valid@email.com"
+        });
+	});
+
 });

@@ -10,6 +10,10 @@ hbApp.service("UsersSrvc", function (HttpSrvc) {
         fetchAll: function () {
             var url = URI_PREFIX;
             return HttpSrvc.hbGet(url);
+        },
+        saveUser: function (user) {
+            var url = URI_PREFIX;
+            return HttpSrvc.hbPost(url, user);
         }
     };
 });
