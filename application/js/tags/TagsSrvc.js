@@ -4,7 +4,7 @@
 
 hbApp.service("TagsSrvc", function (HttpSrvc) {
 
-    var URI_PREFIX = "/heinebier/tags";
+    var URI_PREFIX = "/heinebier/tag";
 
     return {
         fetchAll: function () {

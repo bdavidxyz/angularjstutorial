@@ -4,7 +4,7 @@
 
 hbApp.service("UsersSrvc", function (HttpSrvc) {
 
-    var URI_PREFIX = "/heinebier/users";
+    var URI_PREFIX = "/heinebier/user";
 
     return {
         fetchAll: function () {

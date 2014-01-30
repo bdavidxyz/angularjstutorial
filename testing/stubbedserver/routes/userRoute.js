@@ -29,3 +29,10 @@ var users = [
 exports.listUsers = function (req, res) {
     res.json(200, users);
 };
+exports.postUser = function (req, res) {
+    var theNewUser = {
+        "id": new Date().getTime()
+    };
+    theNewUser.email = req.body.email;
+    res.json(200, theNewUser);
+};

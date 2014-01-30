@@ -25,8 +25,9 @@ app.configure('development', function(){
 });
 
 /*   AUTH REST REQUESTS   */
-app.get('/heinebier/users', userRoute.listUsers);
-app.get('/heinebier/tags', tagRoute.listTags);
+app.get('/heinebier/user', userRoute.listUsers);
+app.post('/heinebier/user', userRoute.postUser);
+app.get('/heinebier/tag', tagRoute.listTags);
 app.get('/heinebier/auth', authRoute.getAuth);
 
 http.createServer(app).listen(app.get('port'), function(){
