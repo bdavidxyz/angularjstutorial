@@ -27,6 +27,12 @@ describe('Users page', function() {
 		expect(element('.hb-user-email:eq(0)').text()).toContain("john.doe@heinebier.com");
 		expect(element('.hb-user-date:eq(0)').text()).toContain("03 Feb 2012");
 	});
+	it('Should be able to filter', function() {
+		input("searchText").enter("one");
+		expect(repeater('.hb-user-email').count()).toEqual(2);
+		input("searchText").enter("");
+		expect(repeater('.hb-user-email').count()).toEqual(5);
+	});
 	it('Should be able to UPDATE an user', function() {
 		element('#HB_user-email-inputeditable-1 div').click();
 		using('#HB_user-email-inputeditable-1').input("text").enter("modified.user@heinebier.com");

@@ -44,5 +44,10 @@ exports.deleteUser = function(req, res) {
 };
 
 exports.updateUser = function(req, res) {
-    res.json(200);
+    console.log(req.params.id);
+    if (req.params.id === "3784") {
+        res.json(404, "error");
+    } else {
+        res.json(200);
+    }
 };

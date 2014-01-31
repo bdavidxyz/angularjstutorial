@@ -1,44 +1,49 @@
 <div class="row" id="HB_users-page">
 	<div class="col-md-12">
 		<div class="row-fluid">
+			<div class="hb-filter" style="text-align:center">filter <input ng-model="searchText"></div>
 			<div>
 				<form class="input-append" name="form" id="HB_new-user-form">
 					<input 
-						id="HB_new-user-form-input"
-						ng-model="newUser.email"
-						type="email"
-						required/>
-						<input 
-						id="HB_new-user-form-date"
-						ng-model="newUser.hireDate"
-						datepicker
-						/>
+					id="HB_new-user-form-input"
+					ng-model="newUser.email"
+					type="email"
+					placeholder="Email"
+					required/>
+					<input 
+					id="HB_new-user-form-date"
+					ng-model="newUser.hireDate"
+					placeholder="Hire Date"
+					datepicker
+					/>
 					<button id="HB_new-user-form-button"
-						ng-disabled="form.$invalid"
-						ng-click="addNewUser()">+</button>
-			</form>
-		</div>
-		<div class="">
-			<table class="table">
-				<thead>
-					<tr>
-						<th id="HB_user-table-header-email">
-							users
-						</th>
-						<th id="HB_user-table-header-hireDate">
-							hired
-						</th>
-						<th id="HB_user-table-header-actions">
-							actions
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="user in users">
-						<td id="HB_user-email-{{$index+1}}">
-							<span class="hb-user-email">
-								
-								<inputeditable id="HB_user-email-inputeditable-{{$index+1}}" text="user.email">
+					ng-disabled="form.$invalid"
+					ng-click="addNewUser()">Add new user</button>
+				</form>
+
+			</div>
+
+			<div class="">
+				<table class="table">
+					<thead>
+						<tr>
+							<th id="HB_user-table-header-email">
+								users
+							</th>
+							<th id="HB_user-table-header-hireDate">
+								hired
+							</th>
+							<th id="HB_user-table-header-actions">
+								actions
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="user in users | filter:searchText">
+							<td id="HB_user-email-{{$index+1}}">
+								<span class="hb-user-email">
+
+									<inputeditable id="HB_user-email-inputeditable-{{$index+1}}" text="user.email">
 									
 								</inputeditable>
 							</span>
