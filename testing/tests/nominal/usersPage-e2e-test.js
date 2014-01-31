@@ -9,6 +9,8 @@
 /* global binding */
 /* global describe */
 /* global input */
+/* global sleep */
+/* global jQueryFunction */
 /* global lastRequest */
 /* jslint node: true */
 "use strict";
@@ -78,6 +80,16 @@ describe('Users page', function() {
 		expect(lastRequest("POST").url()).toEqual("/heinebier/user");
 		expect(lastRequest("POST").body()).toEqual({"email": "a.valid@email.com"});
 		expect(input('newUser.email').val()).toEqual("");
+		expect(repeater('.hb-user-email').count()).toEqual(5);
 	});
-
+	it('Should POST a new user and its hire date', function() {
+		input('newUser.email').enter("another@email.com");
+		expect(input('newUser.email').val()).toEqual("another@email.com");
+		jQueryFunction('#HB_new-user-form-date', "focus");
+		jQueryFunction('.ui-state-default:eq(25)', 'click');
+		element('form#HB_new-user-form > button').click();
+		expect(lastRequest("POST").url()).toEqual("/heinebier/user");
+		expect(lastRequest("POST").body()).toEqual({"email":"another@email.com","hireDate":1390690800000});
+		expect(repeater('.hb-user-email').count()).toEqual(6);
+	});
 });
