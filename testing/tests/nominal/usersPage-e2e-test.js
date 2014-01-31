@@ -38,9 +38,11 @@ describe('Users page', function() {
 		expect(element('#HB_new-user-form-button[disabled]').count()).toBe(0);
 	});
 	it('Should POST a new user and append it to the list when request accepted', function() {
+		expect(input('newUser.email').val()).toEqual("a.valid@email.com");
 		element('form#HB_new-user-form > button').click();
+		expect(lastRequest("POST").url()).toEqual("/heinebier/user");
 		expect(lastRequest("POST").body()).toEqual({"email": "a.valid@email.com"});
-        expect(lastRequest("POST").url()).toEqual("/heinebier/user");
+		expect(input('newUser.email').val()).toEqual("");
 	});
 
 });
