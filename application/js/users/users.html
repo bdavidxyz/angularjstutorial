@@ -35,20 +35,22 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="user in users">
-						<td id="RM_user-email-{{$index+1}}">
+						<td id="HB_user-email-{{$index+1}}">
 							<span class="hb-user-email">
 								
-								<inputeditable id="RM_node-name" text="user.email"></inputeditable>
+								<inputeditable id="HB_user-email-inputeditable-{{$index+1}}" text="user.email">
+									
+								</inputeditable>
 							</span>
 						</td>
-						<td id="RM_user-date-{{$index+1}}">
+						<td id="HB_user-date-{{$index+1}}">
 							<span class="hb-user-date">
 								{{user.hireDate  | date:'dd MMM yyyy'}}
 							</span>
 						</td>
 						<td id="RM_user-date-{{$index+1}}">
-							<button class="hb-update-button">update</button>
-							<button class="hb-delete-button" ng-click="deleteUser(user.id)">delete</button>
+							<button id="HB_update-button-{{$index+1}}" class="hb-update-button" ng-click="updateUser(user)">update</button>
+							<button id="HB_delete-button-{{$index+1}}" class="hb-delete-button" ng-click="deleteUser(user.id)">delete</button>
 						</td>
 					</tr>
 				</tbody>

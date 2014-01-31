@@ -18,6 +18,10 @@ hbApp.service("UsersSrvc", function (HttpSrvc) {
         deleteUser: function (userId) {
             var url = URI_PREFIX + "/" + userId;
             return HttpSrvc.hbDelete(url);
-        }
+        },
+        updateUser: function (user) {
+            var url = URI_PREFIX + "/" + user.id;
+            return HttpSrvc.hbPut(url, user);
+        },
     };
 });

@@ -1,8 +1,12 @@
 /* global browser */
 /* global it */
+/* global iit */
 /* global expect */
+/* global using */
 /* global repeater */
 /* global element */
+/* global pause */
+/* global binding */
 /* global describe */
 /* global input */
 /* global lastRequest */
@@ -16,19 +20,25 @@ describe('Users page', function() {
 		expect(repeater('#HB_users-menu.active').count()).toEqual(1);
 		expect(repeater('#HB_users-page').count()).toEqual(1);
 	});
-	it('Should display all users', function() {
+	it('Should LIST all users', function() {
 		expect(repeater('.hb-user-email').count()).toEqual(5);
 	});
 	it('Should display email and hireDate with format day[2 digit] month[3 char] year[4 digit]', function() {
 		expect(element('.hb-user-email:eq(0)').text()).toContain("john.doe@heinebier.com");
 		expect(element('.hb-user-date:eq(0)').text()).toContain("03 Feb 2012");
 	});
-	it('Should be able to delete a user', function() {
+	it('Should be able to UPDATE an user', function() {
+		element('#HB_user-email-inputeditable-1 div').click();
+		using('#HB_user-email-inputeditable-1').input("text").enter("modified.user@heinebier.com");
+		element('#HB_update-button-1').click();
+		expect(lastRequest("PUT").url()).toEqual("/heinebier/user/1020");
+		expect(lastRequest("PUT").body()).toEqual({"id":"1020","email":"modified.user@heinebier.com","hireDate":"1328245200000"});
+	});
+	it('Should be able to DELETE a user', function() {
 		element('.hb-delete-button:eq(0)').click();
 		expect(lastRequest("DELETE").url()).toEqual("/heinebier/user/1020");
 		expect(repeater('.hb-user-email').count()).toEqual(4);
 	});
-	
 	it('Should be able to add a new user', function() {
 		//an input so that a new user can be entered
 		expect(repeater('form#HB_new-user-form > input#HB_new-user-form-input').count()).toEqual(1);

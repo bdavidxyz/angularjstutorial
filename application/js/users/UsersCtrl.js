@@ -21,4 +21,7 @@ hbApp.controller("UsersCtrl", function ($scope, UsersSrvc, loadedUsers) {
 				}
 			);
     };
+    $scope.updateUser = function(user) {
+		UsersSrvc.updateUser(user);
+    };
 });

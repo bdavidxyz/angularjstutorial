@@ -28,6 +28,7 @@ app.configure('development', function(){
 app.get('/heinebier/user', userRoute.listUsers);
 app.post('/heinebier/user', userRoute.postUser);
 app.delete('/heinebier/user/:id', userRoute.deleteUser);
+app.put('/heinebier/user/:id', userRoute.updateUser);
 
 app.get('/heinebier/tag', tagRoute.listTags);
 app.get('/heinebier/auth', authRoute.getAuth);
