@@ -8,6 +8,11 @@
 						ng-model="newUser.email"
 						type="email"
 						required/>
+						<input 
+						id="HB_new-user-form-date"
+						ng-model="newUser.hireDate"
+						datepicker
+						/>
 					<button id="HB_new-user-form-button"
 						ng-disabled="form.$invalid"
 						ng-click="addNewUser()">+</button>
@@ -17,17 +22,33 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th id="HB_user-table-header">
+						<th id="HB_user-table-header-email">
 							users
+						</th>
+						<th id="HB_user-table-header-hireDate">
+							hired
+						</th>
+						<th id="HB_user-table-header-actions">
+							actions
 						</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="user in users">
 						<td id="RM_user-email-{{$index+1}}">
-							<span class="hb-user">
-								{{user.email}}
+							<span class="hb-user-email">
+								
+								<inputeditable id="RM_node-name" text="user.email"></inputeditable>
 							</span>
+						</td>
+						<td id="RM_user-date-{{$index+1}}">
+							<span class="hb-user-date">
+								{{user.hireDate  | date:'dd MMM yyyy'}}
+							</span>
+						</td>
+						<td id="RM_user-date-{{$index+1}}">
+							<button class="hb-update-button">update</button>
+							<button class="hb-delete-button" ng-click="deleteUser(user.id)">delete</button>
 						</td>
 					</tr>
 				</tbody>

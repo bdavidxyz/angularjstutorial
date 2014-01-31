@@ -27,6 +27,8 @@ app.configure('development', function(){
 /*   AUTH REST REQUESTS   */
 app.get('/heinebier/user', userRoute.listUsers);
 app.post('/heinebier/user', userRoute.postUser);
+app.delete('/heinebier/user/:id', userRoute.deleteUser);
+
 app.get('/heinebier/tag', tagRoute.listTags);
 app.get('/heinebier/auth', authRoute.getAuth);
 
