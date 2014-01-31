@@ -48,12 +48,6 @@ hbApp.directive('datepicker', function () {
 
                 var strDate = (month+1) + "/" + day + "/" + year;
 
-                // var currentTimestamp =
-                //     moment(
-                //         [parseInt(picker.currentYear ,10),
-                //          parseInt(picker.currentMonth ,10),
-                //          parseInt(picker.currentDay, 10) ]);
-                // currentTimestamp = currentTimestamp.toDate().getTime();
                 var currentTimestamp = new Date(strDate).getTime();
                 updateModel(currentTimestamp);
                 if (scope.select) {
