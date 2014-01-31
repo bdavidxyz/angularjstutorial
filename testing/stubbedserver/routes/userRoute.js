@@ -40,13 +40,13 @@ exports.postUser = function(req, res) {
 exports.deleteUser = function(req, res) {
     setTimeout(function() {
         res.json(200);
-    }, 1500);
+    }, 100);
 };
 
 exports.updateUser = function(req, res) {
     console.log(req.params.id);
     if (req.params.id === "3784") {
-        res.json(404, "error");
+        res.json(408, "error");
     } else {
         res.json(200);
     }

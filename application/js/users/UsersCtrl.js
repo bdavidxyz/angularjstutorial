@@ -3,7 +3,8 @@
 /* jslint node: true */
 'use strict';
 
-hbApp.controller("UsersCtrl", function ($scope, UsersSrvc, loadedUsers) {
+hbApp.controller("UsersCtrl", function ($scope, $route, UsersSrvc, loadedUsers) {
+   
     $scope.users = loadedUsers;
 
     $scope.addNewUser = function() {
@@ -22,6 +23,14 @@ hbApp.controller("UsersCtrl", function ($scope, UsersSrvc, loadedUsers) {
 			);
     };
     $scope.updateUser = function(user) {
-		UsersSrvc.updateUser(user);
+		UsersSrvc.updateUser(user).then(
+			function okFunction() {
+
+			},
+			function errorFunction() {
+				$route.reload();
+			}
+
+		);
     };
 });
