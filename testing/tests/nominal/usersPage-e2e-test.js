@@ -89,7 +89,7 @@ describe('Users page', function() {
 		jQueryFunction('.ui-state-default:eq(25)', 'click');
 		element('form#HB_new-user-form > button').click();
 		expect(lastRequest("POST").url()).toEqual("/heinebier/user");
-		expect(lastRequest("POST").body()).toEqual({"email":"another@email.com","hireDate":1390690800000});
+		expect(lastRequest("POST").body()).toEqual({"email":"another@email.com","hireDate":1393369200000});
 		expect(repeater('.hb-user-email').count()).toEqual(6);
 	});
 });

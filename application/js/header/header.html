@@ -1,21 +1,21 @@
 <div class="navbar navbar-default" role="navigation" id="HB_navigation-bar" ng-controller="HeaderCtrl">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#">HeineBier</a>
-  </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li>
-        <a href="#">Projects</a>
-      </li>
-      <li  id="HB_users-menu" ng-class="getClass('/users')">
-        <a href="#/users">Users</a>
-      </li>
-      <li id="HB_tags-menu" ng-class="getClass('/tags')">
-        <a href="#/tags" >Tags</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl" ng-init="loadCurrentUser()">
-      <li ><a id="HB_user-name" href="#">{{currentUser}}</a></li>
-    </ul>
-  </div><!--/.nav-collapse -->
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">HeineBier</a>
+	</div>
+	<div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li id="HB_tags-menu" ng-class="getClass('/tags')">
+				<a href="#/tags" >Tags</a>
+			</li>
+			<li  id="HB_users-menu" ng-class="getClass('/users')">
+				<a href="#/users">Users</a>
+			</li>
+			<li>
+				<a href="#">Projects</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl" ng-init="loadCurrentUser()">
+			<li ><a id="HB_user-name" href="#">{{currentUser}}</a></li>
+		</ul>
+	</div><!--/.nav-collapse -->
 </div>
