@@ -3,6 +3,7 @@ var express = require('express'),
    path = require('path'),
    authRoute = require('./routes/authRoute'),
    userRoute = require('./routes/userRoute'),
+   projectRoute = require('./routes/projectRoute'),
    tagRoute = require('./routes/tagRoute');
 
 var app = express();
@@ -30,6 +31,7 @@ app.post('/heinebier/user', userRoute.postUser);
 app.delete('/heinebier/user/:id', userRoute.deleteUser);
 app.put('/heinebier/user/:id', userRoute.updateUser);
 
+app.get('/heinebier/project', projectRoute.listProjects);
 app.get('/heinebier/tag', tagRoute.listTags);
 app.get('/heinebier/auth', authRoute.getAuth);
 
